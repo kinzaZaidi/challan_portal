@@ -14,7 +14,7 @@ export class CitizenComponent implements OnInit {
   password: String;
   contact: String;
   cnic: String;
-  designation: String;
+  licenseNo: String;
   
   constructor(
     private citizenService: CitizenService,
@@ -32,7 +32,7 @@ export class CitizenComponent implements OnInit {
     password: this.password,
     contact: this.contact,
     cnic: this.cnic,
-    designation: this.designation
+    licenseNo: this.licenseNo
   }
   
   this.citizenService.registerUser(citizen).subscribe(data =>{
