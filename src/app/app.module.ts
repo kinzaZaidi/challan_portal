@@ -10,16 +10,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './Components/home/home.component';
 import { BankComponent } from './Components/bank/bank.component';
 import { PoliceComponent } from './Components/police/police.component';
+import { CitizenComponent } from './Components/citizen/citizen.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
-import { FlashMessagesModule } from 'angular2-flash-messages';
 import { BankService } from './Services/bank.service';
+import { CitizenService } from './Services/citizen.service';
 
 const appRoutes : Routes = [
   {path:'', component : HomeComponent},
   {path:'bank', component : BankComponent},
   {path:'police', component : PoliceComponent},
+  {path: 'citizen', component: CitizenComponent}
 ]
 
 @NgModule({
@@ -27,7 +29,8 @@ const appRoutes : Routes = [
     AppComponent,
     HomeComponent,
     BankComponent,
-    PoliceComponent
+    PoliceComponent,
+    CitizenComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +38,8 @@ const appRoutes : Routes = [
     HttpModule,
     CommonModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot(),
   ],
-  providers: [ValidateService, AuthService, BankService],
+  providers: [AuthService, BankService, CitizenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
