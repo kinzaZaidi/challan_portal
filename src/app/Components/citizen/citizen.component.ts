@@ -9,10 +9,7 @@ import { CitizenService } from '../../Services/citizen.service';
 })
 export class CitizenComponent implements OnInit {
   name : String;
-  username: String;
-  email: String;
-  password: String;
-  contact: String;
+  contactnum: String;
   cnic: String;
   licenseNo: String;
   
@@ -27,10 +24,7 @@ export class CitizenComponent implements OnInit {
   onRegisterSubmit(){
   const citizen = {
     name: this.name,
-    email: this.email,
-    username: this.username,
-    password: this.password,
-    contact: this.contact,
+    contactnum: this.contactnum,
     cnic: this.cnic,
     licenseNo: this.licenseNo
   }
